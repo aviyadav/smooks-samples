@@ -1,0 +1,33 @@
+Code Refactoring - Java 8 idioms
+	- uses of Lambdas
+		. Predicate
+		. Comparator
+		. Runnable
+	- Optionals
+	- Concurrency support
+	- Fork/Join speed improvements
+	- Parallelization
+	- Concise code
+	- new Collection and stream
+	
+Scheduler - changes - include workflow
+File Process - ETL
+Reporting Framework - being taken up by Solution team (Vinod)
+MetaData creation
+Data Quality
+Integration (EAI/ESB)
+Rule Engine
+Human Task/Worklist/Approval Utility
+
+Robotics
+
+Insights
+
+Reference Data (Caching)
+In-Memory processing
+
+
+
+Group: Corporate Operation Group
+Division: Technology
+Department: CFM IT FO - SYD = Commodities Futures Market IT Future Operation (COG - Corporate Operation Group)

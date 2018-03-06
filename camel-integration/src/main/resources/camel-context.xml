@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring-2.17.3.xsd">
+
+    <camel:camelContext>
+        <camel:route>
+            <camel:from uri="direct:input" />
+            <camel:to uri="smooks://file:.//smooks-config.xml"/>
+        </camel:route>
+    
+        <camel:route>
+            <camel:from uri="direct:ireland"/>
+            <camel:process ref="ieLogger"></camel:process>
+        </camel:route>
+        <camel:route>
+            <camel:from uri="direct:greatbritain"/>
+            <camel:process ref="gbLogger"></camel:process>
+        </camel:route>
+    </camel:camelContext>
+  
+    <bean id="ieLogger" class="example.LogProcessor">
+        <constructor-arg>
+            <value>ie</value>
+        </constructor-arg>
+    </bean>
+  
+    <bean id="gbLogger" class="example.LogProcessor">
+        <constructor-arg>
+            <value>gb</value>
+        </constructor-arg>
+    </bean>
+
+</beans>

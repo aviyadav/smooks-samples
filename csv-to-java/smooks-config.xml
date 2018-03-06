@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<smooks-resource-list
+    xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+    xmlns:csv="http://www.milyn.org/xsd/smooks/csv-1.2.xsd">
+    
+    <csv:reader fields="firstName,lastName,gender,age,country">
+        <csv:listBinding beanId="customerList" class="example.Customer" />
+    </csv:reader>
+    
+</smooks-resource-list >

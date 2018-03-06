@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+                      xmlns:fl="http://www.milyn.org/xsd/smooks/fixed-length-1.3.xsd">
+    
+    <fl:reader fields="firstName[20]?trim,lastNamr[20]?trim,gender[6]?trim.upper_case,age[3]?trim,country[2]">
+        <fl:listBinding beanId="customerList" class="example.Customer" />
+    </fl:reader>
+</smooks-resource-list>

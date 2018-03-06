@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+    <header>
+        <date>Sun Oct 02 13:45:28 EST 2016</date>
+        <customer number="34456722">Doe</customer>
+    </header>
+    <order-items>
+        <order-item>
+            <product>111</product>
+            <quantity>2</quantity>
+            <price>8.9</price>
+        </order-item>
+        <order-item>
+            <product>222</product>
+            <quantity>7</quantity>
+            <price>5.20</price>
+        </order-item>
+                <order-item>
+            <product>333</product>
+            <quantity>15</quantity>
+            <price>2.1</price>
+        </order-item>
+                <order-item>
+            <product>444</product>
+            <quantity>78</quantity>
+            <price>0.56</price>
+        </order-item>
+    </order-items>
+</order>

@@ -1,0 +1,18 @@
+mvn clean install -Dmaven.test.skip=true
+mvn dependencies:resolve
+mvn exec:java -Dexec.mainClass="example.Main"
+mvn exec:java -Dexec.mainClass="what to put here?" -Dexec.args="arg0 arg1 arg2"
+
+mvn install:install-file -DgroupId=javax.jms -DartifactId=jms -Dversion=1.1 -Dpackaging=jar -Dfile=jms-1.1.jar
+mvn install:install-file -DgroupId=org.pentaho -DartifactId=pentaho-aggdesigner-algorithm -Dversion=5.1.5-jhyde -Dpackaging=jar -Dfile=D:\software\open-source\lib\pentaho-aggdesigner-algorithm-5.1.5-jhyde.jar
+
+
+cd D:\Users\703175276\programs\codebase\java\nb\camel\camel-example-etl; 
+JAVA_HOME=D:\\Users\\703175276\\programs\\codebase\\java\\jdk1.8.0_91 
+M2_HOME=D:\\Users\\703175276\\programs\\open-source\\apache-maven-3.3.9 
+cmd /c "\"\"D:\\Users\\703175276\\programs\\open-source\\apache-maven-3.3.9\\bin\\mvn.cmd\" -DskipTests=true -Dmaven.ext.class.path=D:\\Users\\703175276\\programs\\sw\\NetBeans8.1\\java\\maven-nblib\\netbeans-eventspy.jar -Dfile.encoding=UTF-8 --fail-at-end install\""
+
+
+camel-spring
+camel-core
+camel-bindy

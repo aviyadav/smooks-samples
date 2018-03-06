@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<smooks-resource-list 
+	xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd" 
+	xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.2.xsd">
+
+    <jb:bean beanId="message" class="java.util.HashMap" createOnElement="message-header">
+        <jb:value property="date" data="message-header/date" decoder="Date">
+            <jb:decodeParam name="format">EEE MMM dd HH:mm:ss z yyyy</jb:decodeParam>
+        </jb:value>
+    </jb:bean>
+
+    <jb:bean beanId="order" class="java.util.HashMap" createOnElement="order">
+        <jb:value property="orderNum" data="order/order-id" decoder="Integer" />
+        <jb:value property="customerUname" data="order/customer-details/username" />
+        <jb:value property="status" data="order/status-code" decoder="Integer" />
+        <jb:value property="net" data="order/net-amount" decoder="BigDecimal" />
+        <jb:value property="total" data="order/total-amount" decoder="BigDecimal" />
+    </jb:bean>
+
+    <jb:bean beanId="orderItem" class="java.util.HashMap" createOnElement="order-item">
+        <jb:value data="order-item/*" />
+    </jb:bean>
+
+</smooks-resource-list>

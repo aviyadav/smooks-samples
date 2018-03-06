@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+                      xmlns:core="http://www.milyn.org/xsd/smooks/smooks-core-1.3.xsd"
+                      xmlns:db="http://www.milyn.org/xsd/smooks/db-routing-1.1.xsd">
+    
+    <core:filterSettings type="SAX" />
+    
+    <import file="edi-orders-parser.xml" />
+    
+    <import file="datasources.xml" />
+    
+    <import file="bindings.xml" />
+    
+    <db:executor executeOnElement="customer-details" datasource="DBExtractTransformLoadDS" executeBefore="true">
+        <db:statement>select ORDERNUMBER from ORDERS where ORDERNUMBER = ${order.orderNum}</db:statement>
+        <db:resultSet name="orderExistsRS"/>
+    </db:executor>
+    
+    <db:executor executeOnElement="customer-details" datasource="DBExtractTransformLoadDS" executeBefore="false">
+        <condition>orderExistsRS.isEmpty()</condition>
+        <db:statement>INSERT INTO ORDERS VALUES(${order.orderNum}, ${order.customerUname}, ${order.status}, ${order.net}, ${order.total}, ${message.date})</db:statement>
+    </db:executor>
+    
+    <db:executor executeOnElement="order-item" datasource="DBExtractTransformLoadDS" executeBefore="false">
+    	<condition>orderExistsRS.isEmpty()</condition>
+    	<db:statement>INSERT INTO ORDERITEMS VALUES (${order.orderNum}, ${orderItem.quantity}, ${orderItem.productId}, ${orderItem.title}, ${orderItem.price})</db:statement>
+    </db:executor>
+
+</smooks-resource-list>

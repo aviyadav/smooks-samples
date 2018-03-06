@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+Tue Oct 18 13:54:21 IST 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instance a816c00e-0157-d6e4-2dfd-000000a55038 
+on database directory D:\Users\703175276\programs\codebase\java\nb\camel\camel-example-etl\target\derby  with class loader sun.misc.Launcher$AppClassLoader@1d16e93 
+Loaded from file:/D:/Users/703175276/programs/open-source/apache-maven-3.3.9/repo/org/apache/derby/derby/10.8.2.2/derby-10.8.2.2.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_91-b15
+user.dir=D:\Users\703175276\programs\codebase\java\nb\camel\camel-example-etl
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

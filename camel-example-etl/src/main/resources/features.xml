@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<features>
+
+    <repository>mvn:org.apache.camel.karaf/apache-camel/2.17.3/xml/features</repository>
+
+    <feature name='camel-example-etl' version='2.17.3'>
+        <feature version="2.17.3">camel-jaxb</feature>
+        <feature version="2.17.3">camel-jpa</feature>
+        <feature version="2.17.3">camel-juel</feature>
+        <feature version="2.17.3">camel-spring</feature>
+        <bundle>mvn:org.apache.derby/derby/${derby-version}</bundle>
+        <bundle>mvn:org.apache.openjpa/openjpa/${openjpa-version}</bundle>
+        <bundle>mvn:org.apache.camel/camel-example-etl/2.17.3</bundle>
+    </feature>
+
+</features>

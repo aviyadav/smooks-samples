@@ -1,0 +1,46 @@
+Git Commands
+
+1. Clone a project from remote repository
+$ git clone <repository-url>
+
+2. List the branches associated to the contents of the current directory
+$ git branch --list
+* master
+
+3. Create a local branch on the repository
+$ git branch feature/FUTURE-jiraNo
+
+4. Switch the branch in local to JIRA branck from master
+$ git checkout feature/FUTURE-jiraNo
+Switched to branch 'feature/FUTURE-1740-commitno-Changes'
+
+5. Pull the branch to local (PWD)
+$ git pull origin feature/FUTURE-jiraNo-commitno-Changes
+
+6. Push the changes to the JIRA branch:
+$ env GIT_SSL_NO_VERYFY=true
+  git push origin feature/FUTURE-jiraNo-commitno-Changes
+  
+  git config --global user.name "ayadav"
+  
+7. Deleting a remote branch
+$ git push origin :newfeature
+
+8. Delete the local branch:
+$ git branch -d newfeature
+
+9. revert merged
+$ git revert <commit_no> -m (only for merge commit)
+
+-----------------------------------------------------------------------------
+
+Fresh start (folder  - normally branch folder)
+git clone https://ayadav9@stash.internal.macquarie.com/scm/fcr/gcs.git
+
+git branch integration/2016.11.0 (in gcs folder)
+git checkout integration/2016.11.0
+git pull origin integration/2016.11.0
+
+
+
+git clone https://github.com/aviyadav/learnings.git

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smooks-resource-list
+    xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+    xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.4.xsd"
+    xmlns:dao="http://www.milyn.org/xsd/smooks/persistence-1.4.xsd">
+
+    <jb:bean beanId="order" class="example.jpa.entity.Order" createOnElement="order">
+        <jb:value property="ordernumber" data="ordernumber" decoder="Integer" />
+        <jb:value property="orderDate" data="date" decoder="Date">
+            <jb:decodeParam name="format">yyyy-MM-dd HH:mm:ss</jb:decodeParam>
+        </jb:value>
+        <jb:wiring property="customer" beanIdRef="customer" />
+        <jb:wiring setterMethod="addOrderLine" beanIdRef="orderLine" />
+    </jb:bean>
+    
+    <dao:locator beanId="customer" dao="customer" lookup="id" onNoResult="EXCEPTION">
+        <dao:params>
+            <dao:value name="id" data="customer" decoder="Integer" />
+        </dao:params>
+    </dao:locator>
+    
+    <jb:bean beanId="orderLine" class="example.jpa.entity.OrderLine" createOnElement="order-item">
+        <jb:value property="quantity" data="quantity" decoder="Integer"/>
+        <jb:wiring property="order" beanIdRef="order"/>
+        <jb:wiring property="product" beanIdRef="product"/>
+    </jb:bean>
+    
+    <dao:locator beanId="product" dao="product" lookup="id" lookupOnElement="order-item" onNoResult="EXCEPTION">
+        <dao:params>
+            <dao:value name="id" data="product" decoder="Integer"/>
+        </dao:params>
+    </dao:locator>
+    
+    <dao:inserter beanId="order" dao="order" />
+</smooks-resource-list>
