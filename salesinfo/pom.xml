@@ -13,7 +13,7 @@
         <speedment.version>3.0.1</speedment.version>
         <db.groupId>mysql</db.groupId>
         <db.artifactId>mysql-connector-java</db.artifactId>
-        <db.version>5.1.39</db.version>
+        <db.version>8.0.28</db.version>
 
     </properties>
     <build>
